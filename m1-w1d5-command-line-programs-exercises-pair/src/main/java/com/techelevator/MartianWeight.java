@@ -22,12 +22,19 @@ public class MartianWeight {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Enter weight");
-		int wE = input.nextInt();
-		System.out.println(wE + " lbs. on Earth, is " + weightConversion(wE) + " lbs. on Mars.");
+		System.out.println("Enter a series of weights:");
+		String weightMeasurements = input.nextLine();
+		
+		
+		
+		String earthWeight[] = weightMeasurements.split(" ");
+		for (int i = 0; i < earthWeight.length; i++) {
+		int convertedValue = Integer.parseInt(earthWeight[i]);
+		double result = convertedValue * 0.378;
+		System.out.println(convertedValue + "lbs. on Earth, is " + result + "lbs. on Mars");
+		
+			}
+		}
+	
+		
 	}
-	public static int weightConversion(int wE) {
-		int wM = (int)(wE * 0.378);
-			return wM;
-	}
-}
